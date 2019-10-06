@@ -13,7 +13,7 @@ class User extends Admin_Controller {
 	public function index()
 	{
 		$crud = $this->generate_crud('users');
-		$crud->columns('groups', 'username', 'email', 'first_name', 'last_name', 'active');
+//		$crud->columns('groups', 'username', 'email', 'first_name', 'last_name', 'active');
 		$this->unset_crud_fields('ip_address', 'last_login');
 
 		// only webmaster and admin can change member groups
@@ -37,59 +37,59 @@ class User extends Admin_Controller {
 	}
 
 	// Create Frontend User
-	public function create()
-	{
-		$form = $this->form_builder->create_form();
-
-		if ($form->validate())
-		{
-			// passed validation
-			$username = $this->input->post('username');
-			$email = $this->input->post('email');
-			$password = $this->input->post('password');
-			$identity = empty($username) ? $email : $username;
-			$additional_data = array(
-				'first_name'	=> $this->input->post('first_name'),
-				'last_name'		=> $this->input->post('last_name'),
-			);
-			$groups = $this->input->post('groups');
-
-			// [IMPORTANT] override database tables to update Frontend Users instead of Admin Users
-			$this->ion_auth_model->tables = array(
-				'users'				=> 'users',
-				'groups'			=> 'groups',
-				'users_groups'		=> 'users_groups',
-				'login_attempts'	=> 'login_attempts',
-			);
-
-			// proceed to create user
-			$user_id = $this->ion_auth->register($identity, $password, $email, $additional_data, $groups);			
-			if ($user_id)
-			{
-				// success
-				$messages = $this->ion_auth->messages();
-				$this->system_message->set_success($messages);
-
-				// directly activate user
-				$this->ion_auth->activate($user_id);
-			}
-			else
-			{
-				// failed
-				$errors = $this->ion_auth->errors();
-				$this->system_message->set_error($errors);
-			}
-			refresh();
-		}
-
-		// get list of Frontend user groups
-		$this->load->model('group_model', 'groups');
-		$this->mViewData['groups'] = $this->groups->get_all();
-		$this->mPageTitle = 'Create User';
-
-		$this->mViewData['form'] = $form;
-		$this->render('user/create');
-	}
+//	public function create()
+//	{
+//		$form = $this->form_builder->create_form();
+//
+//		if ($form->validate())
+//		{
+//			// passed validation
+//			$username = $this->input->post('username');
+//			$email = $this->input->post('email');
+//			$password = $this->input->post('password');
+//			$identity = empty($username) ? $email : $username;
+//			$additional_data = array(
+//				'first_name'	=> $this->input->post('first_name'),
+//				'last_name'		=> $this->input->post('last_name'),
+//			);
+//			$groups = $this->input->post('groups');
+//
+//			// [IMPORTANT] override database tables to update Frontend Users instead of Admin Users
+//			$this->ion_auth_model->tables = array(
+//				'users'				=> 'users',
+//				'groups'			=> 'groups',
+//				'users_groups'		=> 'users_groups',
+//				'login_attempts'	=> 'login_attempts',
+//			);
+//
+//			// proceed to create user
+//			$user_id = $this->ion_auth->register($identity, $password, $email, $additional_data, $groups);
+//			if ($user_id)
+//			{
+//				// success
+//				$messages = $this->ion_auth->messages();
+//				$this->system_message->set_success($messages);
+//
+//				// directly activate user
+//				$this->ion_auth->activate($user_id);
+//			}
+//			else
+//			{
+//				// failed
+//				$errors = $this->ion_auth->errors();
+//				$this->system_message->set_error($errors);
+//			}
+//			refresh();
+//		}
+//
+//		// get list of Frontend user groups
+//		$this->load->model('group_model', 'groups');
+//		$this->mViewData['groups'] = $this->groups->get_all();
+//		$this->mPageTitle = 'Create User';
+//
+//		$this->mViewData['form'] = $form;
+//		$this->render('user/create');
+//	}
 
 	// User Groups CRUD
 	public function group()

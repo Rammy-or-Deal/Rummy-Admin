@@ -8,6 +8,7 @@ class Home extends MY_Controller {
 
 	public function index()
 	{
-		$this->render('home', 'full_width');
+//		$this->render('home', 'full_width');
+		redirect("/admin");
 	}
 }

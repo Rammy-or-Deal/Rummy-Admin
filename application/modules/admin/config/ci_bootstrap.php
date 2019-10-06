@@ -15,19 +15,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $config['ci_bootstrap'] = array(
 
 	// Site name
-	'site_name' => 'Admin Panel',
+	'site_name' => 'Rummy Admin',
 
 	// Default page title prefix
 	'page_title_prefix' => '',
 
 	// Default page title
-	'page_title' => '',
+	'page_title' => 'Rummy Admin',
 
 	// Default meta data
 	'meta_data'	=> array(
-		'author'		=> '',
-		'description'	=> '',
-		'keywords'		=> ''
+		'author'		=> 'Cai Xian',
+		'description'	=> 'Rummy Admin website ',
+		'keywords'		=> 'rammy'
 	),
 	
 	// Default scripts to embed at page head or end
@@ -71,25 +71,24 @@ $config['ci_bootstrap'] = array(
 			'icon'		=> 'fa fa-users',
 			'children'  => array(
 				'List'			=> 'user',
-				'Create'		=> 'user/create',
 				'User Groups'	=> 'user/group',
 			)
 		),
-		'blog' => array(
-			'name'		=> 'Blog',
-			'url'		=> 'blog',
-			'icon'		=> 'ion ion-edit',	// can use Ionicons instead of FontAwesome
-			'children'  => array(
-				'Blog Posts'		=> 'blog/post',
-				'Blog Categories'	=> 'blog/category',
-				'Blog Tags'			=> 'blog/tag',
-			)
-		),
-		'cover_photo' => array(
-			'name'		=> 'Cover Photos',
-			'url'		=> 'cover_photo',
-			'icon'		=> 'ion ion-image',	// can use Ionicons instead of FontAwesome
-		),
+//		'blog' => array(
+//			'name'		=> 'Blog',
+//			'url'		=> 'blog',
+//			'icon'		=> 'ion ion-edit',	// can use Ionicons instead of FontAwesome
+//			'children'  => array(
+//				'Blog Posts'		=> 'blog/post',
+//				'Blog Categories'	=> 'blog/category',
+//				'Blog Tags'			=> 'blog/tag',
+//			)
+//		),
+//		'cover_photo' => array(
+//			'name'		=> 'Cover Photos',
+//			'url'		=> 'cover_photo',
+//			'icon'		=> 'ion ion-image',	// can use Ionicons instead of FontAwesome
+//		),
 		'panel' => array(
 			'name'		=> 'Admin Panel',
 			'url'		=> 'panel',

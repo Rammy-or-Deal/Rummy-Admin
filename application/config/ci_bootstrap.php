@@ -15,19 +15,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $config['ci_bootstrap'] = array(
 
 	// Site name
-	'site_name' => 'CI Bootstrap 3',
+	'site_name' => 'Rummy or Deal',
 
 	// Default page title prefix
 	'page_title_prefix' => '',
 
 	// Default page title
-	'page_title' => '',
+	'page_title' => 'Rummy Game',
 
 	// Default meta data
 	'meta_data'	=> array(
-		'author'		=> '',
-		'description'	=> '',
-		'keywords'		=> ''
+		'author'		=> 'Cai Xian',
+		'description'	=> 'Rummy or Deal Game Admin site',
+		'keywords'		=> 'rummy'
 	),
 
 	// Default scripts to embed at page head or end

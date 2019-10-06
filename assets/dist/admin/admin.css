@@ -5,10 +5,17 @@
  * 	/assets/sass/admin.scss
  */
 
-
 .gc-container {
-    width:100%
+    width: 100%
 }
+
 .gc-container .table-container {
     overflow: auto;
+}
+
+.login-image {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -1;
 }
