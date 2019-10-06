@@ -74,6 +74,17 @@ $config['ci_bootstrap'] = array(
 				'User Groups'	=> 'user/group',
 			)
 		),
+        'sys' => array(
+            'name'		=> 'Game Settings',
+            'url'		=> 'sys',
+            'icon'		=> 'fa fa-cog',
+            'children'  => array(
+                'Items'			=> 'sys/items',
+                'Shop Items'			=> 'sys/shop_items',
+                'Skills'			=> 'sys/skills',
+
+            )
+        ),
 //		'blog' => array(
 //			'name'		=> 'Blog',
 //			'url'		=> 'blog',
