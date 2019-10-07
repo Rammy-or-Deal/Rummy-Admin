@@ -11,4 +11,11 @@ class Home extends MY_Controller {
 //		$this->render('home', 'full_width');
 		redirect("/admin");
 	}
+
+    public function index0()
+    {
+//        $this->render('home', 'full_width');
+        echo ("OK");
+//		redirect("/admin");
+    }
 }

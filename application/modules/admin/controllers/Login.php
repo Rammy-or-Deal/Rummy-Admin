@@ -12,7 +12,7 @@ class Login extends MY_Controller {
 	{
 		$this->load->library('form_builder');
 		$form = $this->form_builder->create_form();
-
+        print_r($this->input->post('username'));
 		if ($form->validate())
 		{
 			// passed validation
