@@ -28,9 +28,12 @@ class Users extends API_Controller {
 	 */
 	public function index_get()
 	{
-		$data = $this->users
-			->select('id, username, email, active, first_name, last_name')
-			->get_all();
+//		$data = $this->users
+//			->select('id, username, email, active, name')
+//			->get_all();
+        $data = $this->users
+            ->select('*')
+            ->get_all();
 		$this->response($data);
 	}
 
@@ -60,10 +63,20 @@ class Users extends API_Controller {
 	public function id_get($id)
 	{
 		$data = $this->users
-			->select('id, username, email, active, first_name, last_name')
+			->select('id, username, email, active, name,facebook_id')
 			->get($id);
 		$this->response($data);
 	}
+
+    public function udid_get($udid)
+    {
+        $data = $this->users
+            ->select('*')
+            ->get_by('udid',$udid);
+        if (!$data)
+            $data="No";
+        $this->response($data);
+    }
 
 	/**
 	 * @SWG\Put(
