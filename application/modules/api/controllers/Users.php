@@ -73,8 +73,19 @@ class Users extends API_Controller {
         $data = $this->users
             ->select('*')
             ->get_by('udid',$udid);
-        if (!$data)
-            $data="No";
+        if (!$data){
+            $data=[
+                'udid'=>$udid,
+                'name'=>'Guest_'.rand(1000,9999),
+                'pic'=>"new_avatar/avatar_".rand(1,26),
+                'frame_id'=>1,
+                'skill_level'=>0,
+                'coin_value'=>50000,
+                'leaf_value'=>100,
+            ];
+            $this->users->insert($data);
+        }
+
         $this->response($data);
     }
 
